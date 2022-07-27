@@ -1,3 +1,7 @@
+"""
+A script for plotting the data which is available in the databases (case studies)
+discussed in the data-sharing perspective.
+"""
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -8,7 +12,7 @@ sns.set_theme("talk", "white")
 palette1 = sns.color_palette("Paired")  # for visualizing data that comes in pairs
 palette2 = sns.color_palette("tab10")   # for visualizing other data
 
-# define some functions
+# define some functions for loading the data
 def load_pubchem_data(filename : str) -> Tuple[list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
