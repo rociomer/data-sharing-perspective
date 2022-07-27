@@ -6,6 +6,6 @@ Data and scripts to generate figures for the data-sharing perspective.
 ## Documents (publications) from which data is sources in ChEMBL (cumulative)
 ![ChEMBL documents](./chembl-documents.png)
 ## Entries available in the PDB (cumulative)
-![PDB entries](./pdb-entires.png)
+![PDB entries](./pdb-entries.png)
 ## Structures available in the CSD (cumulative)
 ![CSD structures](./csd-structures.png)
