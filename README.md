@@ -6,6 +6,7 @@ Data and scripts to generate figures for the data-sharing perspective.
 ## Documents (publications) from which data is sourced in ChEMBL (cumulative)
 ![ChEMBL documents](./chembl-documents.png)
 * Add data on non-publication sources (see email)
+* Breakdown of ALL data sources in the release notes [here](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
 ## Entries available in the PDB (cumulative)
 ![PDB entries](./pdb-entries.png)
 * [Here](https://www.wwpdb.org/stats/deposition) it is broken down by # of annual depositors, which is more relevant (end of page)
