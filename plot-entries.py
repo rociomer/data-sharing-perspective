@@ -9,8 +9,7 @@ from typing import Tuple
 
 # set Seaborn themes and color palettes
 sns.set_theme("poster", "ticks")
-palette1 = sns.color_palette("Paired")  # for visualizing data that comes in pairs
-palette2 = sns.color_palette("tab10")   # for visualizing other data
+palette2 = sns.color_palette("muted")
 
 # define some functions for loading the data
 def load_pubchem_data(filename : str) -> Tuple[list, list]:
@@ -87,9 +86,9 @@ RNAi_assay_dates, RNAi_assay_sources = load_pubchem_data(filename="./data/pubche
 
 # plot the PubChem data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(substance_dates, substance_sources, label=f"Substances", color=palette2[0])
-ax.plot(assay_dates, assay_sources, label=f"Assays", color=palette2[1])
-ax.plot(RNAi_assay_dates, RNAi_assay_sources, label=f"RNAi assays", color=palette2[2])
+ax.plot(substance_dates, substance_sources, label=f"PubChem Substances", color=palette2[0])
+ax.plot(assay_dates, assay_sources, label=f"PubChem Assays", color=palette2[1])
+ax.plot(RNAi_assay_dates, RNAi_assay_sources, label=f"PubChem RNAi assays", color=palette2[2])
 ax.legend()
 ytick = max(substance_sources[-1], assay_sources[-1], RNAi_assay_sources[-1])
 ax.set(xticks=[substance_dates[i] for i in [0, 1, -1]], yticks=[ytick])
@@ -104,7 +103,7 @@ chembl_versions, chembl_dates, chembl_compounds, chembl_activities, chembl_assay
 
 # plot the PubChem data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(chembl_dates, chembl_documents, color=palette2[3], label="Documents")
+ax.plot(chembl_dates, chembl_documents, color=palette2[3], label="ChEMBL documents")
 ax.legend()
 ytick = chembl_documents[-1]
 ax.set(xticks=[chembl_dates[i] for i in [0, 1, -1]], yticks=[ytick])
@@ -119,7 +118,7 @@ pdb_dates, pdb_total_entries, pdb_annual_entries = load_pdb_data(filename="./dat
 
 # plot the PDB data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(pdb_dates, pdb_total_entries, color=palette2[4], label="Entries")
+ax.plot(pdb_dates, pdb_total_entries, color=palette2[4], label="PDB entries")
 ax.legend()
 ytick = pdb_total_entries[-1]
 ax.set(xticks=[pdb_dates[i] for i in [0, 1, -1]], yticks=[ytick])
@@ -134,7 +133,7 @@ csd_dates, csd_structures, csd_ave_n_atoms_per_structure = load_csd_data(filenam
 
 # plot the CSD data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(csd_dates, np.cumsum(csd_structures), color=palette2[5], label="Structures")
+ax.plot(csd_dates, np.cumsum(csd_structures), color=palette2[6], label="CSD structures")
 ax.legend()
 ytick = np.cumsum(csd_structures)[-1]
 ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
