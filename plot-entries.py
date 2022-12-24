@@ -80,31 +80,31 @@ def load_csd_data(filename : str) -> Tuple[list, list, list]:
 
 ## PubChem
 # load the PubChem data
-substance_dates, substance_sources   = load_pubchem_data(filename="./data/pubchem-substance-sources.csv")
-assay_dates, assay_sources           = load_pubchem_data(filename="./data/pubchem-assay-sources.csv")
-RNAi_assay_dates, RNAi_assay_sources = load_pubchem_data(filename="./data/pubchem-RNAi-assay-sources.csv")
+substance_dates, substance_count   = load_pubchem_data(filename="./data/pubchem-substances-data-count.csv")
+assay_dates, assay_count           = load_pubchem_data(filename="./data/pubchem-bioassays-data-count.csv")
+compound_dates, compound_count     = load_pubchem_data(filename="./data/pubchem-compounds-data-count.csv")
 
 # plot the PubChem data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(substance_dates, substance_sources, label=f"PubChem Substances", color=palette2[0])
-ax.plot(assay_dates, assay_sources, label=f"PubChem Assays", color=palette2[1])
-ax.plot(RNAi_assay_dates, RNAi_assay_sources, label=f"PubChem RNAi assays", color=palette2[2])
-ax.legend()
-ytick = max(substance_sources[-1], assay_sources[-1], RNAi_assay_sources[-1])
-ax.set(xticks=[substance_dates[i] for i in [0, 1, -1]], yticks=[ytick])
-ax.set_xticklabels(labels=[substance_dates[i].astype(object).year for i in [0, 1, -1]], rotation=45, ha="right", rotation_mode="anchor")
+#ax.plot(substance_dates, substance_count, label=f"PubChem Substances", color=palette2[0])
+ax.plot(assay_dates, assay_count, label=f"PubChem BioAssays", color=palette2[1])
+#ax.plot(compound_dates, compound_count, label=f"PubChem Compounds", color=palette2[2])
+ax.legend(frameon=False)
+ytick = max(assay_count[-1], assay_count[-1], assay_count[-1])
+ax.set(xticks=[assay_dates[i] for i in [0, 1, -1]], yticks=[ytick])
+ax.set_xticklabels(labels=[assay_dates[i].astype(object).year for i in [0, 1, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
-fig.savefig("pubchem-sources.png")
+fig.savefig("pubchem-count.png")
 
 ## ChEMBL
 # load the ChEMBL data
 chembl_versions, chembl_dates, chembl_compounds, chembl_activities, chembl_assays, chembl_targets, chembl_documents = load_chembl_data(filename="./data/chembl-documents.csv")
 
-# plot the PubChem data
+# plot the ChEMBL data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
 ax.plot(chembl_dates, chembl_documents, color=palette2[3], label="ChEMBL documents")
-ax.legend()
+ax.legend(frameon=False)
 ytick = chembl_documents[-1]
 ax.set(xticks=[chembl_dates[i] for i in [0, 1, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[chembl_dates[i].astype(object).year for i in [0, 1, -1]], rotation=45, ha="right", rotation_mode="anchor")
@@ -119,7 +119,7 @@ pdb_dates, pdb_total_entries, pdb_annual_entries = load_pdb_data(filename="./dat
 # plot the PDB data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
 ax.plot(pdb_dates, pdb_total_entries, color=palette2[4], label="PDB entries")
-ax.legend()
+ax.legend(frameon=False)
 ytick = pdb_total_entries[-1]
 ax.set(xticks=[pdb_dates[i] for i in [0, 1, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[pdb_dates[i].astype(object).year for i in [0, 1, -1]], rotation=45, ha="right", rotation_mode="anchor")
@@ -134,10 +134,36 @@ csd_dates, csd_structures, csd_ave_n_atoms_per_structure = load_csd_data(filenam
 # plot the CSD data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
 ax.plot(csd_dates, np.cumsum(csd_structures), color=palette2[6], label="CSD structures")
-ax.legend()
+ax.legend(frameon=False)
 ytick = np.cumsum(csd_structures)[-1]
 ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[csd_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
 fig.savefig("csd-structures.png")
+
+# plot all the data together
+fig, ax = plt.subplots(1, 1, figsize=(18, 4.5))
+ax.plot(csd_dates, np.cumsum(csd_structures), color=palette2[6], label="CSD structures")
+ax.scatter(csd_dates[0], np.cumsum(csd_structures)[0], color=palette2[6], marker="o")
+ax.scatter(csd_dates[-1], np.cumsum(csd_structures)[-1], color=palette2[6], marker=">")
+ax.plot(pdb_dates, pdb_total_entries, color=palette2[4], label="PDB entries")
+ax.scatter(pdb_dates[0], pdb_total_entries[0], color=palette2[4], marker="o")
+ax.scatter(pdb_dates[-1], pdb_total_entries[-1], color=palette2[4], marker=">")
+#ax.plot(substance_dates, substance_count, label=f"PubChem Substances", color=palette2[0])
+#ax.scatter(substance_dates[0], substance_count[0], color=palette2[0], marker="o")
+#ax.scatter(substance_dates[-1], substance_count[-1], color=palette2[0], marker=">")
+ax.plot(assay_dates, assay_count, label=f"PubChem BioAssays", color=palette2[1])
+ax.scatter(assay_dates[0], assay_count[0], color=palette2[1], marker="o")
+ax.scatter(assay_dates[-1], assay_count[-1], color=palette2[1], marker=">")
+#ax.plot(compound_dates, compound_count, label=f"PubChem Compounds", color=palette2[2])
+#ax.scatter(compound_dates[0], compound_count[0], color=palette2[2], marker="o")
+#ax.scatter(compound_dates[-1], compound_count[-1], color=palette2[2], marker=">")
+ax.plot(chembl_dates, chembl_documents, color=palette2[3], label="ChEMBL documents")
+ax.scatter(chembl_dates[0], chembl_documents[0], color=palette2[3], marker="o")
+ax.scatter(chembl_dates[-1], chembl_documents[-1], color=palette2[3], marker=">")
+ax.legend(frameon=False, bbox_to_anchor=(1.01, 1), borderaxespad=0)
+ax.set_yscale("log")
+ax.set(xlabel="Year", ylabel="Count")
+fig.tight_layout()
+fig.savefig("all.png")
