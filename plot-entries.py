@@ -87,7 +87,6 @@ RNAi_assay_dates, RNAi_assay_sources = load_pubchem_data(filename="./data/pubche
 
 # plot the PubChem data
 fig, ax = plt.subplots(1, 1, figsize=(15,5))
-x = np.arange(len(substance_dates))
 ax.plot(substance_dates, substance_sources, label=f"Substances", color=palette2[0])
 ax.plot(substance_dates, substance_sources+assay_sources, label=f"Assays", color=palette2[1])
 ax.plot(substance_dates, substance_sources+assay_sources+RNAi_assay_sources, label=f"RNAi assays", color=palette2[2])
@@ -105,12 +104,11 @@ chembl_versions, chembl_dates, chembl_compounds, chembl_activities, chembl_assay
 
 # plot the PubChem data
 fig, ax = plt.subplots(1, 1, figsize=(12,6))
-x = np.arange(len(chembl_dates))
-ax.bar(x=x, height=chembl_documents, color=palette2[3], width=1, align="edge")
+ax.plot(chembl_dates, chembl_documents, color=palette2[3])
 ax.set(xlabel="Date",
        ylabel="Documents",
-       xticks=x[::2])
-ax.set_xticklabels(labels=chembl_dates[::2], rotation=45)
+       xticks=chembl_dates[::2])
+ax.set_xticklabels(labels=chembl_dates[::2], rotation=67)
 fig.tight_layout()
 fig.savefig("chembl-documents.png")
 
