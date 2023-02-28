@@ -1,6 +1,14 @@
 # data-sharing-perspective
 Data and scripts to generate figures for the data-sharing perspective.
 
+## Environment
+Begin by creating a conda environment in which to run the following scripts:
+
+```
+conda create -n data-sharing-perspective seaborn -c anaconda
+conda activate data-sharing-perspective
+```
+
 ## Data sources for data in PubChem (cumulative)
 ![PubChem sources](./pubchem-sources.png)
 * PubChem [publications page](https://pubchem.ncbi.nlm.nih.gov/docs/publications) where I got the data count for PubChem Compounds, BioAssays, and Substances:
@@ -28,3 +36,4 @@ Data and scripts to generate figures for the data-sharing perspective.
 ## Structures available in the CSD (cumulative)
 ![CSD structures](./csd-structures.png)
 * Is there any data on num authors per year? (somewhat related, but not exactly desired, data [here](https://www.ccdc.cam.ac.uk/support-and-resources/ccdcresources/6297f7b0ac4d4d5ca48a7cbd463159fc.pdf))
+* New link since CCDC website update: https://www.ccdc.cam.ac.uk/media/Documentation/9DA399C5-90F8-478E-9C41-EAFD1868ED31/9da399c590f8478e9c41eafd1868ed31.pdf
