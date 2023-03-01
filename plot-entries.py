@@ -16,7 +16,7 @@ def load_pubchem_data(filename : str) -> Tuple[list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, count = [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -30,7 +30,7 @@ def load_chembl_data(filename : str) -> Tuple[list, list, list, list, list, list
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         version, date, compounds, activities, assays, targets, documents= [], [], [], [], [], [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -42,14 +42,14 @@ def load_chembl_data(filename : str) -> Tuple[list, list, list, list, list, list
             assays.append(int(split_line[4]))
             targets.append(int(split_line[5]))
             documents.append(int(split_line[6]))
-    
+
         return version, date, compounds, activities, assays, targets, documents
 
 def load_pdb_data(filename : str) -> Tuple[list, list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, total_entries, annual_entries = [], [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -57,14 +57,14 @@ def load_pdb_data(filename : str) -> Tuple[list, list, list]:
             date.append(np.datetime64(split_line[0]))
             total_entries.append(int(split_line[1]))
             annual_entries.append(int(split_line[2]))
-    
+
         return date, total_entries, annual_entries
 
 def load_csd_data(filename : str) -> Tuple[list, list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, annual_structures, ave_n_atoms_per_structure = [], [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -75,7 +75,7 @@ def load_csd_data(filename : str) -> Tuple[list, list, list]:
                 ave_n_atoms_per_structure.append(int(split_line[2]))
             except ValueError:
                 ave_n_atoms_per_structure.append(np.NAN)
-    
+
         return date, annual_structures, ave_n_atoms_per_structure
 
 ## PubChem
@@ -166,4 +166,4 @@ ax.legend(frameon=False, bbox_to_anchor=(1.01, 1), borderaxespad=0)
 ax.set_yscale("log")
 ax.set(xlabel="Year", ylabel="Count")
 fig.tight_layout()
-fig.savefig("all.png")
+fig.savefig("all-entries.png")
