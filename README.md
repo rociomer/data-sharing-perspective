@@ -28,14 +28,13 @@ conda activate data-sharing-perspective
 ![ChEMBL documents](./chembl-documents.png)
 * Add data on non-publication sources (see email)
 * Breakdown of ALL data sources in the release notes [here](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
-* See email from Fiona Hunterf or cource information
+* See email from Fiona Hunter for source information
 
 ## Entries available in the PDB (cumulative)
 ![PDB entries](./pdb-entries.png)
-* [Here](https://www.wwpdb.org/stats/deposition) it is broken down by # of annual depositors, which is more relevant (end of page)
 * [PDB Annual Depositors](https://www.wwpdb.org/stats/deposition)
 
 ## Structures available in the CSD (cumulative)
 ![CSD structures](./csd-structures.png)
-* Is there any data on num authors per year? (somewhat related, but not exactly desired, data [here](https://www.ccdc.cam.ac.uk/support-and-resources/ccdcresources/6297f7b0ac4d4d5ca48a7cbd463159fc.pdf))
-* New link since CCDC website update: https://www.ccdc.cam.ac.uk/media/Documentation/9DA399C5-90F8-478E-9C41-EAFD1868ED31/9da399c590f8478e9c41eafd1868ed31.pdf
+* [Old link](https://www.ccdc.cam.ac.uk/support-and-resources/ccdcresources/6297f7b0ac4d4d5ca48a7cbd463159fc.pdf))
+* [New link since CCDC website update](https://www.ccdc.cam.ac.uk/media/Documentation/9DA399C5-90F8-478E-9C41-EAFD1868ED31/9da399c590f8478e9c41eafd1868ed31.pdf)

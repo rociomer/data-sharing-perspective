@@ -16,7 +16,7 @@ def load_pubchem_data(filename : str) -> Tuple[list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, count = [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -30,7 +30,7 @@ def load_chembl_data(filename : str) -> Tuple[list, list, list, list, list, list
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         version, date, sources = [], [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -38,28 +38,28 @@ def load_chembl_data(filename : str) -> Tuple[list, list, list, list, list, list
             version.append(split_line[0])
             date.append(np.datetime64(split_line[1]))
             sources.append(int(split_line[2]))
-    
+
         return version, date, sources
 
 def load_pdb_data(filename : str) -> Tuple[list, list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, depositors, = [], []
         for line in raw_input[1:]:  # skip first row (header)
             split_line = line.split(", ")
             date.append(np.datetime64(split_line[0]))
             depositors.append(int(split_line[1]))
-    
+
         return date, depositors
 
 def load_csd_data(filename : str) -> Tuple[list, list, list]:
     with open(filename, "r") as input_data:
         # read entries; each entry is a separate line
         raw_input = input_data.read().split("\n")
-    
+
         # parse the date and separate it from the source count
         date, annual_structures, ave_n_atoms_per_structure = [], [], []
         for line in raw_input[1:]:  # skip first row (header)
@@ -70,7 +70,7 @@ def load_csd_data(filename : str) -> Tuple[list, list, list]:
                 ave_n_atoms_per_structure.append(int(split_line[2]))
             except ValueError:
                 ave_n_atoms_per_structure.append(np.NAN)
-    
+
         return date, annual_structures, ave_n_atoms_per_structure
 
 ## PubChem
@@ -122,26 +122,26 @@ ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
 fig.savefig("pdb-depositors.png")
 
-# ## CSD
-# # load the CSD data
-# csd_dates, csd_sources, csd_ave_n_atoms_per_structure = load_csd_data(filename="./data/csd-structures.csv")
-# 
-# # plot the CSD data
-# fig, ax = plt.subplots(1, 1, figsize=(15,5))
-# ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
-# ax.legend(frameon=False)
-# ytick = np.cumsum(csd_sources)[-1]
-# ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
-# ax.set_xticklabels(labels=[csd_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
-# ax.set_yticklabels(labels=[f"{ytick:.2e}"])
-# fig.tight_layout()
-# fig.savefig("csd-contributors.png")
+## CSD
+# load the CSD data
+csd_dates, csd_sources, csd_ave_n_atoms_per_structure = load_csd_data(filename="./data/csd-structures.csv")
+
+# plot the CSD data
+fig, ax = plt.subplots(1, 1, figsize=(15,5))
+ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
+ax.legend(frameon=False)
+ytick = np.cumsum(csd_sources)[-1]
+ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
+ax.set_xticklabels(labels=[csd_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
+ax.set_yticklabels(labels=[f"{ytick:.2e}"])
+fig.tight_layout()
+fig.savefig("csd-contributors.png")
 
 # plot all the data together
 fig, ax = plt.subplots(1, 1, figsize=(18, 4.5))
-#ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
-#ax.scatter(csd_dates[0], np.cumsum(csd_sources)[0], color=palette2[6], marker="o")
-#ax.scatter(csd_dates[-1], np.cumsum(csd_sources)[-1], color=palette2[6], marker=">")
+ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
+ax.scatter(csd_dates[0], np.cumsum(csd_sources)[0], color=palette2[6], marker="o")
+ax.scatter(csd_dates[-1], np.cumsum(csd_sources)[-1], color=palette2[6], marker=">")
 ax.plot(pdb_dates, pdb_depositors, color=palette2[4], label="PDB depositors")
 ax.scatter(pdb_dates[0], pdb_depositors[0], color=palette2[4], marker="o")
 ax.scatter(pdb_dates[-1], pdb_depositors[-1], color=palette2[4], marker=">")
