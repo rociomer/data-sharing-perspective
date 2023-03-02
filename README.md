@@ -6,8 +6,17 @@ Begin by creating a conda environment in which to run the following scripts:
 
 ```
 conda create -n data-sharing-perspective seaborn -c anaconda
-conda activate data-sharing-perspective
+conda activate data-sharing-perspectiv`
 ```
+
+## Scripts for plotting (1) reaction entries and (2) contributors/sources
+```
+python plot-entries.py
+python plot-contributors.py
+```
+
+## Illustrator files
+Files used for making the figures shown in the paper are available in `illustrator/`. Made using Adobe Illustrator.
 
 ## Data sources for data in PubChem (cumulative)
 ![PubChem sources](./pubchem-sources.png)
@@ -38,3 +47,17 @@ conda activate data-sharing-perspective
 ![CSD structures](./csd-structures.png)
 * [Old link](https://www.ccdc.cam.ac.uk/support-and-resources/ccdcresources/6297f7b0ac4d4d5ca48a7cbd463159fc.pdf))
 * [New link since CCDC website update](https://www.ccdc.cam.ac.uk/media/Documentation/9DA399C5-90F8-478E-9C41-EAFD1868ED31/9da399c590f8478e9c41eafd1868ed31.pdf)
+
+## Links to icons used in data collection schematic
+Can all be used for free with attribution:
+* https://www.flaticon.com/free-icon/data-science_9850843
+* https://www.flaticon.com/free-icon/laptop_9006060?term=translator&page=1&position=94&origin=search&related_id=9006060
+* https://www.flaticon.com/free-icon/aggregation_9850779
+* https://www.flaticon.com/free-icon/big-data_9872410
+* https://www.flaticon.com/free-icon/cloud-database_8637228
+* https://www.flaticon.com/free-icon/document_2140758?related_id=2140758
+* https://www.flaticon.com/free-icon/loupe_751463?term=magnifying+glass&page=1&position=1&origin=search&related_id=751463
+* https://www.flaticon.com/free-icon/data-science_7760592
+* https://www.flaticon.com/free-icon/unstructured-data_9850860?related_id=9850860&origin=search
+* https://www.flaticon.com/free-icon/robot_9151271?related_id=9151271
+* https://www.flaticon.com/free-icon/laboratory_250181?term=scientist&page=1&position=5&origin=search&related_id=250181
