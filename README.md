@@ -58,9 +58,9 @@ Data collected from:
   - [2013 & 2016](https://academic.oup.com/nar/article/45/D1/D955/2605812?login=false)
   - [2018](https://academic.oup.com/nar/article/47/D1/D1102/5146201?login=false)
   - [2021](https://academic.oup.com/nar/article/49/D1/D1388/5957164?login=false)
-  - [2022](https://pubchem.ncbi.nlm.nih.gov/docs/statistics)*
+  - [2022](https://pubchem.ncbi.nlm.nih.gov/docs/statistics)\*
 
-  * Accessed Dec 25, 2022.
+\* Accessed Dec 25, 2022.
 
 ### ChEMBL
 Sources (documents) for data in ChEMBL (cumulative):
@@ -68,7 +68,7 @@ Sources (documents) for data in ChEMBL (cumulative):
 Compound entries in ChEMBL (cumulative):
 ![ChEMBL compounds](./figures/chembl-compounds.png)
 Data collected from:
-* Breakdown of all data sources in the release notes [here](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
+* Breakdown of all data sources in the [release notes](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
 
 ### Links to icons used in paper figures
-Flaticon images linked here (used freely with attribution): [1](https://www.flaticon.com/free-icon/data-science_9850843), [2](https://www.flaticon.com/free-icon/laptop_9006060?term=translator&page=1&position=94&origin=search&related_id=9006060), [3](https://www.flaticon.com/free-icon/aggregation_9850779), [4](https://www.flaticon.com/free-icon/big-data_9872410), [5](https://www.flaticon.com/free-icon/cloud-database_8637228), [6](https://www.flaticon.com/free-icon/document_2140758?related_id=2140758), [7](https://www.flaticon.com/free-icon/loupe_751463?term=magnifying+glass&page=1&position=1&origin=search&related_id=751463), [8](https://www.flaticon.com/free-icon/data-science_7760592), [8](https://www.flaticon.com/free-icon/unstructured-data_9850860?related_id=9850860&origin=search), [9](https://www.flaticon.com/free-icon/robot_9151271?related_id=9151271), [10](https://www.flaticon.com/free-icon/laboratory_250181?term=scientist&page=1&position=5&origin=search&related_id=250181)
+Flaticon images linked here (used freely with attribution): [1](https://www.flaticon.com/free-icon/data-science_9850843), [2](https://www.flaticon.com/free-icon/laptop_9006060?term=translator&page=1&position=94&origin=search&related_id=9006060), [3](https://www.flaticon.com/free-icon/aggregation_9850779), [4](https://www.flaticon.com/free-icon/big-data_9872410), [5](https://www.flaticon.com/free-icon/cloud-database_8637228), [6](https://www.flaticon.com/free-icon/document_2140758?related_id=2140758), [7](https://www.flaticon.com/free-icon/loupe_751463?term=magnifying+glass&page=1&position=1&origin=search&related_id=751463), [8](https://www.flaticon.com/free-icon/data-science_7760592), [9](https://www.flaticon.com/free-icon/unstructured-data_9850860?related_id=9850860&origin=search), [10](https://www.flaticon.com/free-icon/robot_9151271?related_id=9151271), [11](https://www.flaticon.com/free-icon/laboratory_250181?term=scientist&page=1&position=5&origin=search&related_id=250181)
