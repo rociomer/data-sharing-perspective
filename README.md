@@ -17,10 +17,10 @@ python plot-contributors.py
 ```
 
 The first script will plot data entries over time and the second script will plot contributors/sources over time, for the following databases:
-* CSD
-* PDB
-* PubChem
-* ChEMBL
+* [CSD](https://www.ccdc.cam.ac.uk/solutions/software/csd/)
+* [PDB](https://www.rcsb.org/)
+* [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
+* [ChEMBL](https://www.ebi.ac.uk/chembl/)
 
 ## Illustrator files
 Files used for making the figures shown in the paper are available in [illustrator/](./illustrator/). Made using Adobe Illustrator.
@@ -30,23 +30,23 @@ The raw data for the above plots is available in [data/](./data/). For individua
 
 ### CSD
 Structures available in the CSD (cumulative):
-![CSD structures](./csd-structures.png)
+![CSD structures](./figures/csd-structures.png)
 Data collected from:
 * [CCDC documentation](https://www.ccdc.cam.ac.uk/media/Documentation/9DA399C5-90F8-478E-9C41-EAFD1868ED31/9da399c590f8478e9c41eafd1868ed31.pdf)
 
 ### PDB
 Depositors for data in the PDB (cumulative):
-![PDB depositors](./pdb-depositors.png)
+![PDB depositors](./figures/pdb-depositors.png)
 Entries available in the PDB (cumulative)
-![PDB entries](./pdb-entries.png)
+![PDB entries](./figures/pdb-entries.png)
 Data collected from:
 * [PDB Annual Depositors](https://www.wwpdb.org/stats/deposition)
 
 ### PubChem
 Sources for data in PubChem (cumulative):
-![PubChem sources](./pubchem-sources.png)
+![PubChem sources](./figures/pubchem-sources.png)
 Data entries in PubChem (cumulative):
-![PubChem BioAssays](./pubchem-count.png)
+![PubChem BioAssays](./figures/pubchem-count.png)
 Data collected from:
 * PubChem [publications page](https://pubchem.ncbi.nlm.nih.gov/docs/publications) where I got the data count for PubChem Compounds, BioAssays, and Substances:
   - [2005](https://www.genome.gov/15014443/2005-release-nih-nationwide-network-of-molecular-libraries-screening-centers)
@@ -65,9 +65,9 @@ Data collected from:
 
 ### ChEMBL
 Sources (documents) for data in ChEMBL (cumulative):
-![ChEMBL documents](./chembl-sources.png)
+![ChEMBL documents](./figures/chembl-sources.png)
 Compound entries in ChEMBL (cumulative):
-![ChEMBL compounds](./chembl-compounds.png)
+![ChEMBL compounds](./figures/chembl-compounds.png)
 Data collected from:
 * Breakdown of all data sources in the release notes [here](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
 

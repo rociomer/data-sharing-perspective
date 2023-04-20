@@ -95,7 +95,7 @@ ax.set(xticks=[assay_dates[i] for i in [0, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[assay_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
-fig.savefig("pubchem-count.png")
+fig.savefig("figures/pubchem-count.png")
 
 ## ChEMBL
 # load the ChEMBL data
@@ -110,7 +110,7 @@ ax.set(xticks=[chembl_dates[i] for i in [0, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[chembl_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
-fig.savefig("chembl-compounds.png")
+fig.savefig("figures/chembl-compounds.png")
 
 ## PDB
 # load the PDB data
@@ -125,7 +125,7 @@ ax.set(xticks=[pdb_dates[i] for i in [0, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[pdb_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
-fig.savefig("pdb-entries.png")
+fig.savefig("figures/pdb-entries.png")
 
 ## CSD
 # load the CSD data
@@ -140,7 +140,7 @@ ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
 ax.set_xticklabels(labels=[csd_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
 ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
-fig.savefig("csd-structures.png")
+fig.savefig("figures/csd-structures.png")
 
 # plot all the data together
 fig, ax = plt.subplots(1, 1, figsize=(18, 4.5))
@@ -166,4 +166,4 @@ ax.legend(frameon=False, bbox_to_anchor=(1.01, 1), borderaxespad=0)
 ax.set_yscale("log")
 ax.set(xlabel="Year", ylabel="Count")
 fig.tight_layout()
-fig.savefig("all-entries.png")
+fig.savefig("figures/all-entries.png")
