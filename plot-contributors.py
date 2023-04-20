@@ -122,26 +122,8 @@ ax.set_yticklabels(labels=[f"{ytick:.2e}"])
 fig.tight_layout()
 fig.savefig("pdb-depositors.png")
 
-## CSD
-# load the CSD data
-csd_dates, csd_sources, csd_ave_n_atoms_per_structure = load_csd_data(filename="./data/csd-structures.csv")
-
-# plot the CSD data
-fig, ax = plt.subplots(1, 1, figsize=(15,5))
-ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
-ax.legend(frameon=False)
-ytick = np.cumsum(csd_sources)[-1]
-ax.set(xticks=[csd_dates[i] for i in [0, -1]], yticks=[ytick])
-ax.set_xticklabels(labels=[csd_dates[i].astype(object).year for i in [0, -1]], rotation=45, ha="right", rotation_mode="anchor")
-ax.set_yticklabels(labels=[f"{ytick:.2e}"])
-fig.tight_layout()
-fig.savefig("csd-contributors.png")
-
 # plot all the data together
 fig, ax = plt.subplots(1, 1, figsize=(18, 4.5))
-ax.plot(csd_dates, np.cumsum(csd_sources), color=palette2[6], label="CSD contributors")
-ax.scatter(csd_dates[0], np.cumsum(csd_sources)[0], color=palette2[6], marker="o")
-ax.scatter(csd_dates[-1], np.cumsum(csd_sources)[-1], color=palette2[6], marker=">")
 ax.plot(pdb_dates, pdb_depositors, color=palette2[4], label="PDB depositors")
 ax.scatter(pdb_dates[0], pdb_depositors[0], color=palette2[4], marker="o")
 ax.scatter(pdb_dates[-1], pdb_depositors[-1], color=palette2[4], marker=">")
