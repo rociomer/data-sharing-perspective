@@ -2,8 +2,7 @@
 Data and scripts to generate figures for the perspective "Data sharing in chemistry: lessons learned and a case for mandating structured reaction data" by R. Mercado, S. Kearnes, and C. Coley.
 
 ## Environment
-Begin by creating a conda environment in which to run the following scripts:
-
+You can use a conda environment to run the plotting scripts in this repo. To set up the environment, run:
 ```
 conda create -n data-sharing-perspective seaborn -c anaconda
 conda activate data-sharing-perspective`
@@ -71,5 +70,5 @@ Compound entries in ChEMBL (cumulative):
 Data collected from:
 * Breakdown of all data sources in the release notes [here](https://chembl.gitbook.io/chembl-interface-documentation/downloads)
 
-### Links to icons used in data collection schematic
-All Flaticon images linked used for free with attribution: [1](https://www.flaticon.com/free-icon/data-science_9850843), [2](https://www.flaticon.com/free-icon/laptop_9006060?term=translator&page=1&position=94&origin=search&related_id=9006060), [3](https://www.flaticon.com/free-icon/aggregation_9850779), [4](https://www.flaticon.com/free-icon/big-data_9872410), [5](https://www.flaticon.com/free-icon/cloud-database_8637228), [6](https://www.flaticon.com/free-icon/document_2140758?related_id=2140758), [7](https://www.flaticon.com/free-icon/loupe_751463?term=magnifying+glass&page=1&position=1&origin=search&related_id=751463), [8](https://www.flaticon.com/free-icon/data-science_7760592), [8](https://www.flaticon.com/free-icon/unstructured-data_9850860?related_id=9850860&origin=search), [9](https://www.flaticon.com/free-icon/robot_9151271?related_id=9151271), [10](https://www.flaticon.com/free-icon/laboratory_250181?term=scientist&page=1&position=5&origin=search&related_id=250181)
+### Links to icons used in paper figures
+Flaticon images linked here (used freely with attribution): [1](https://www.flaticon.com/free-icon/data-science_9850843), [2](https://www.flaticon.com/free-icon/laptop_9006060?term=translator&page=1&position=94&origin=search&related_id=9006060), [3](https://www.flaticon.com/free-icon/aggregation_9850779), [4](https://www.flaticon.com/free-icon/big-data_9872410), [5](https://www.flaticon.com/free-icon/cloud-database_8637228), [6](https://www.flaticon.com/free-icon/document_2140758?related_id=2140758), [7](https://www.flaticon.com/free-icon/loupe_751463?term=magnifying+glass&page=1&position=1&origin=search&related_id=751463), [8](https://www.flaticon.com/free-icon/data-science_7760592), [8](https://www.flaticon.com/free-icon/unstructured-data_9850860?related_id=9850860&origin=search), [9](https://www.flaticon.com/free-icon/robot_9151271?related_id=9151271), [10](https://www.flaticon.com/free-icon/laboratory_250181?term=scientist&page=1&position=5&origin=search&related_id=250181)
