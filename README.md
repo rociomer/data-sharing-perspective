@@ -1,5 +1,5 @@
 # data-sharing-perspective
-Data and scripts to generate figures for the perspective "Data sharing in chemistry: lessons learned and a case for mandating structured reaction data" by R. Mercado, S. Kearnes, and C. Coley.
+Data and scripts to generate figures for the perspective "Data sharing in chemistry: lessons learned and a case for mandating structured reaction data" by R Mercado, S Kearnes, and CW Coley.
 
 ## Environment
 You can use a conda environment to run the plotting scripts in this repo. To set up the environment, run:
